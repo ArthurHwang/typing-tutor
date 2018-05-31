@@ -7,7 +7,15 @@ const characters = [
   {6: 'y'}
 ]
 
-function renderSingle (arr) {
+function renderSingle(arr) {
   let character = document.getElementById('char-render');
-  character.innerHTML = arr[0][1];  
+  character.innerHTML = arr[0][1];
 }
+
+function renderAll(arr) {
+  let character = document.getElementById('char-render');
+  arr.forEach((element, index, array) => {
+    let value = element[index + 1]
+    character.innerHTML += value;
+  })
+  }
