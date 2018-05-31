@@ -1,29 +1,15 @@
-const characters = [
-  {1: 'g'},
-  {2: 'r'},
-  {3: 'u'},
-  {4: 'm'},
-  {5: 'p'},
-  {6: 'y'},
-  {7: ' '},
-  {8: 'w'},
-  {9: 'i'},
-  {10: 'z'},
-  {11: 'a'},
-  {12: 'r'},
-  {13: 'd'},
-  {14: 's'},
-];
+const words = 'grumpy wizards make toxic brew for the evil queen and jack'
+const splitWords = words.split('').map((char, index) => {return {char}});
 
-function renderSingle(arr) {
-  let character = document.getElementById('char-render');
-  character.innerHTML = arr[0][1];
+const createSpan = character => {
+  const span = document.createElement('span')
+  span.textContent = character;
+  span.className = "span"
+  return span
 }
 
-function renderAll(arr) {
-  let character = document.getElementById('char-render');
-  arr.forEach((element, index, array) => {
-    let value = element[index + 1]
-    character.innerHTML += value;
-  });
+const renderAll = array => {
+  array.forEach(element => {
+    document.body.appendChild(createSpan(element.char))
+  })
 }
