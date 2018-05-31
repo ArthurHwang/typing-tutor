@@ -17,10 +17,11 @@ p {
   font-size: 30px;
 }
 
-span:first-child {
-  font-size: 50px;
+span {
+  font-size: 30px;
 }
 
 .current-character {
   color: #007fff;
+  font-size: 80px;
 }
