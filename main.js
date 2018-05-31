@@ -6,3 +6,8 @@ const characters = [
   {5: 'p'},
   {6: 'y'}
 ]
+
+function renderSingle (arr) {
+  let character = document.getElementById('char-render');
+  character.innerHTML = arr[0][1];  
+}
