@@ -2,8 +2,8 @@ const words = 'grumpy wizards make toxic brew for the evil queen and jack'
 const splitWords = words.split('').map((char, index) => {return {char}});
 
 const appState = {
-  this.currentCharacter: undefined,
-  this.currentIndex: undefined
+  currentCharacter: splitWords,
+  currentIndex: 0
 }
 
 const createSpan = character => {
