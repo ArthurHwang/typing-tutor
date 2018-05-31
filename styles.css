@@ -1,0 +1,18 @@
+* {
+  background-color: black;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  text-align: center;
+  margin-top: 20%;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 30px;
+}
