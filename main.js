@@ -29,14 +29,17 @@ const renderAll = array => {
 }
 
 const clearPage = () => {
-  let deletedSpans = document.getElementsByTagName('span');
-  let body = document.body
-  for (let i = 0; i < deletedSpans.length; i++) {
-    deletedSpans[i].parentNode.removeChild(deletedSpans[i])
-    }
+  let deletedSpans = document.querySelectorAll('span');
+  deletedSpans.forEach(span => span.remove())
 }
 
 window.addEventListener('keydown', (e) => {
+  let target = document.querySelector('.current-character').innerHTML;
+  if (e.key === target) {
+    appState.currentIndex++
+  } else {
+    appState.failures++
+  }
   clearPage();
   renderAll(splitWords);
 })
