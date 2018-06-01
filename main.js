@@ -28,4 +28,17 @@ const renderAll = array => {
   })
 }
 
+const clearPage = () => {
+  let deletedSpans = document.getElementsByTagName('span');
+  let body = document.body
+  for (let i = 0; i < deletedSpans.length; i++) {
+    deletedSpans[i].parentNode.removeChild(deletedSpans[i])
+    }
+}
+
+window.addEventListener('keydown', (e) => {
+  clearPage();
+  renderAll(splitWords);
+})
+
 renderAll(splitWords);
