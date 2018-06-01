@@ -39,20 +39,20 @@ const clearPage = () => {
   deletedSpans.forEach(span => span.remove())
 }
 
-const calculateSuccess = () => {
+const calculateSuccess = (obj) => {
   let totalFailures = 0;
-  for (let i = 0; i < appState.characters.length; i++) {
-    totalFailures += appState.characters[i].failures
+  for (let i = 0; i < obj.characters.length; i++) {
+    totalFailures += obj.characters[i].failures
   }
   if (totalFailures === 0) {
     return ("100% accurate")
   }
-  return ((appState.characters.length + totalFailures) / totalFailures) + "% accurate"
+  return (obj.characters.length / (totalFailures + obj.characters.length)) * 100 + "% accurate"
 }
 
-const gameOver = () => {
+const gameOver = (obj) => {
   let h1 = document.createElement('h1')
-  h1.textContent = "Game Over! " + calculateSuccess()
+  h1.textContent = "Game Over! " + calculateSuccess(obj)
   h1.className = "game-over"
   document.body.appendChild(h1)
 }
@@ -66,7 +66,7 @@ window.addEventListener('keydown', (e) => {
   }
 
   if (appState.characters[appState.currentIndex] === undefined) {
-    gameOver()
+    gameOver(appState)
   }
   clearPage();
   renderAll(appState.characters);
