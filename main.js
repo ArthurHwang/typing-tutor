@@ -22,6 +22,9 @@ const createSpan = element => {
   if (appState.currentIndex === element.index) {
     span.classList.toggle('current-character');
   }
+  if (element.failures > 0 && appState.currentIndex === element.index) {
+    span.classList.toggle('failed');
+  }
   return span;
 }
 
