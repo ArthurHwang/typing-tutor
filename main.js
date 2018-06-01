@@ -39,6 +39,17 @@ const clearPage = () => {
   deletedSpans.forEach(span => span.remove())
 }
 
+const calculateSuccess = () => {
+  let totalFailures = 0;
+  for (let i = 0; i < appState.characters.length; i++) {
+    totalFailures += appState.characters[i].failures
+  }
+  if (totalFailures === 0) {
+    return ("100% accurate")
+  }
+  return ((appState.characters.length + totalFailures) / totalFailures) + "% accurate"
+}
+
 window.addEventListener('keydown', (e) => {
   let target = appState.characters[appState.currentIndex].char
   if (e.key === target) {
