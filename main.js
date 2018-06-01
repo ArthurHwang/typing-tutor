@@ -8,7 +8,8 @@ const splitWords = words.split('').map((char, index) => {
 
 const appState = {
   currentCharacter: splitWords,
-  currentIndex: 0
+  currentIndex: 0,
+  failures: 0
 }
 
 const createSpan = element => {
