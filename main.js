@@ -57,7 +57,6 @@ const gameOver = () => {
   document.body.appendChild(h1)
 }
 
-
 window.addEventListener('keydown', (e) => {
   let target = appState.characters[appState.currentIndex].char
   if (e.key === target) {
@@ -65,11 +64,12 @@ window.addEventListener('keydown', (e) => {
   } else {
     appState.characters[appState.currentIndex].failures++
   }
-  // gameOver()
+
+  if (appState.characters[appState.currentIndex] === undefined) {
+    gameOver()
+  }
   clearPage();
-
   renderAll(appState.characters);
-
 })
 
 renderAll(appState.characters);
