@@ -35,3 +35,7 @@ span {
   font-size: 30px;
   color: #00ff0c
 }
+
+.game-over {
+  color: magenta;
+}

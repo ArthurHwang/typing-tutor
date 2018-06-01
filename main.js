@@ -50,6 +50,14 @@ const calculateSuccess = () => {
   return ((appState.characters.length + totalFailures) / totalFailures) + "% accurate"
 }
 
+const gameOver = () => {
+  let h1 = document.createElement('h1')
+  h1.textContent = "Game Over! " + calculateSuccess()
+  h1.className = "game-over"
+  document.body.appendChild(h1)
+}
+
+
 window.addEventListener('keydown', (e) => {
   let target = appState.characters[appState.currentIndex].char
   if (e.key === target) {
@@ -57,8 +65,11 @@ window.addEventListener('keydown', (e) => {
   } else {
     appState.characters[appState.currentIndex].failures++
   }
+  // gameOver()
   clearPage();
+
   renderAll(appState.characters);
+
 })
 
 renderAll(appState.characters);
