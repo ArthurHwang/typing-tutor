@@ -47,7 +47,7 @@ const calculateSuccess = (obj) => {
   if (totalFailures === 0) {
     return ("100% accurate")
   }
-  return (obj.characters.length / (totalFailures + obj.characters.length)) * 100 + "% accurate"
+  return (obj.characters.length / (totalFailures + obj.characters.length) * 100).toFixed(2)  + "% accurate"
 }
 
 const gameOver = (obj) => {
@@ -64,7 +64,6 @@ window.addEventListener('keydown', (e) => {
   } else {
     appState.characters[appState.currentIndex].failures++
   }
-
   if (appState.characters[appState.currentIndex] === undefined) {
     gameOver(appState)
   }
