@@ -25,3 +25,13 @@ span {
   color: #007fff;
   font-size: 80px;
 }
+
+.failed {
+  font-size: 80px;
+  color: red;
+}
+
+.succeed {
+  font-size: 30px;
+  color: #00ff0c
+}
