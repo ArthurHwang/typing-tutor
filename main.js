@@ -34,8 +34,9 @@ const createSpan = element => {
 }
 
 const renderAll = array => {
+  const renderTarget = document.querySelector('.container')
   array.forEach(element => {
-    document.body.appendChild(createSpan(element))
+    renderTarget.appendChild(createSpan(element))
   })
 }
 
@@ -53,12 +54,12 @@ const calcAccuracy = (obj) => {
   if (totalFailures === 0) {
     return ("100% accurate")
   }
-  return (charactersLength / (totalFailures + charactersLength) * 100).toFixed(2) + "% accurate"
+  return (charactersLength / (totalFailures + charactersLength) * 100).toFixed(2)
 }
 
 const gameOver = (obj) => {
   let endScore = document.createElement('h1')
-  endScore.textContent = "Game Over!" + calcAccuracy(obj)
+  endScore.textContent = calcAccuracy(obj) + "% accurate"
   endScore.className = "game-over"
   document.body.appendChild(endScore)
 }
