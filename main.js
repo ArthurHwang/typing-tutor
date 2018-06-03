@@ -48,7 +48,7 @@ const renderAll = array => {
   })
 }
 
-const clearPage = () => {
+const clearSpans = () => {
   let span = document.querySelectorAll('span');
   span.forEach(span => span.remove())
 }
@@ -65,22 +65,17 @@ const calcAccuracy = (obj) => {
   return (charactersLength / (totalFailures + charactersLength) * 100).toFixed(2)
 }
 
-
-
 const gameOver = (obj) => {
   const endScore = document.createElement('h1')
-  const endScoreTarget = document.querySelector('.game-over');
+  const endScoreTarget = document.querySelector('.game-over-section');
   endScore.textContent = calcAccuracy(obj) + "% accurate"
   endScore.className = "game-over"
   endScoreTarget.appendChild(endScore)
 }
 
-
-
 window.addEventListener('keydown', (e) => {
   let target = appState.characters[appState.currentIndex].char
   let stateCharacters = appState.characters;
-  buttonState.counter++
 
   if (e.key === target) {
     appState.currentIndex++
@@ -91,11 +86,20 @@ window.addEventListener('keydown', (e) => {
   if (stateCharacters[appState.currentIndex] === undefined) {
     gameOver(appState)
   }
-  clearPage();
+  clearSpans();
   renderAll(stateCharacters);
 })
 
 $startButton.addEventListener('click', (e) => {    
+  if (buttonState.counter === 0) {
+    buttonState.counter++
+    renderAll(appState.characters)
+  }
+  if (buttonState.counter > 0) {
+    return
+  }
+  
+
 
   
 })
