@@ -2,6 +2,8 @@
   background-color: black;
   color: white;
   font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  padding: 0;
 }
 
 body {
@@ -68,7 +70,7 @@ span {
   font-weight: 100;
   font-size: 80px;
   color: #f7ef04;
-  animation: 1s blink step-end infinite;
+  animation: 0.2s blink step-end infinite;
 }
 
 @-webkit-keyframes "blink" {
@@ -79,4 +81,17 @@ span {
   50% {
     color: #f7ef04;
   }
+}
+
+#button-start {
+  box-shadow: none;
+  border: 1px solid green;
+  margin-top: 10px;
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #26ff00;
+  color: black;
+  font-weight: 700;
+
 }
