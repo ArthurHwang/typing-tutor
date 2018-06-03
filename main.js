@@ -24,11 +24,14 @@ const createSpan = element => {
   if (stateIndex - 1 === spanIndex) {
     classList.toggle('succeed');
   }
-  if (stateIndex === spanIndex) {    
+  if (stateIndex === spanIndex) {
     classList.toggle('current-char-blinking')
   }
   if (element.failures > 0 && stateIndex === spanIndex) {
     classList.toggle('failed');
+  }
+  if (element.failures > 0 && stateIndex === spanIndex && span.textContent === ' ') {
+    classList.toggle('space-fail')
   }
   return span;
 }
