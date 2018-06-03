@@ -1,3 +1,5 @@
+const $startButton = document.getElementById('button-start')
+const $gameSection = document.querySelector('.container')
 const words = 'grumpy wizards make toxic brew for the evil queen and jack'
 const splitWords = words.split('').map((char, index) => {
   return {
@@ -10,6 +12,10 @@ const splitWords = words.split('').map((char, index) => {
 const appState = {
   characters: splitWords,
   currentIndex: 0,
+}
+
+const buttonState = {
+  counter: 0
 }
 
 const createSpan = element => {
@@ -36,10 +42,9 @@ const createSpan = element => {
   return span;
 }
 
-const renderAll = array => {
-  const renderTarget = document.querySelector('.container')
+const renderAll = array => { 
   array.forEach(element => {
-    renderTarget.appendChild(createSpan(element))
+    $gameSection.appendChild(createSpan(element))
   })
 }
 
@@ -60,7 +65,7 @@ const calcAccuracy = (obj) => {
   return (charactersLength / (totalFailures + charactersLength) * 100).toFixed(2)
 }
 
-// const 
+
 
 const gameOver = (obj) => {
   const endScore = document.createElement('h1')
@@ -70,9 +75,12 @@ const gameOver = (obj) => {
   endScoreTarget.appendChild(endScore)
 }
 
+
+
 window.addEventListener('keydown', (e) => {
   let target = appState.characters[appState.currentIndex].char
   let stateCharacters = appState.characters;
+  buttonState.counter++
 
   if (e.key === target) {
     appState.currentIndex++
@@ -87,4 +95,8 @@ window.addEventListener('keydown', (e) => {
   renderAll(stateCharacters);
 })
 
-renderAll(appState.characters);
+$startButton.addEventListener('click', (e) => {    
+
+  
+})
+
