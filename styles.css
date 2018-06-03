@@ -10,7 +10,7 @@ body {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 45px;
   background-color: #ff3f00;
   width: 75%;
   margin: auto;
@@ -24,7 +24,7 @@ p {
 }
 
 span {
-  font-size: 30px;
+  font-size: 25px;
   background-color: rgba(0, 0, 0, 0)
 }
 
@@ -40,7 +40,7 @@ span {
 
 .succeed {
   font-size: 30px;
-  color: #00ff0c
+  color: #1dff00
 }
 
 .game-over {
@@ -52,4 +52,8 @@ span {
   width: 75%;
   margin: auto;
   border-radius: 10px;
+}
+
+.space-fail {
+  background-color: red;
 }
