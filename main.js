@@ -63,10 +63,11 @@ const calcAccuracy = (obj) => {
 // const 
 
 const gameOver = (obj) => {
-  let endScore = document.createElement('h1')
+  const endScore = document.createElement('h1')
+  const endScoreTarget = document.querySelector('.game-over');
   endScore.textContent = calcAccuracy(obj) + "% accurate"
   endScore.className = "game-over"
-  document.body.appendChild(endScore)
+  endScoreTarget.appendChild(endScore)
 }
 
 window.addEventListener('keydown', (e) => {

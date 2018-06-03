@@ -83,4 +83,15 @@ span {
   }
 }
 
-.
+#button-start {
+  box-shadow: none;
+  border: 1px solid green;
+  margin-top: 10px;
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #26ff00;
+  color: black;
+  font-weight: 700;
+
+}
