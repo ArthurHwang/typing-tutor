@@ -24,8 +24,8 @@ const createSpan = element => {
   if (stateIndex - 1 === spanIndex) {
     classList.toggle('succeed');
   }
-  if (stateIndex === spanIndex) {
-    classList.toggle('current-character');
+  if (stateIndex === spanIndex) {    
+    classList.toggle('current-char-blinking')
   }
   if (element.failures > 0 && stateIndex === spanIndex) {
     classList.toggle('failed');
@@ -52,7 +52,7 @@ const calcAccuracy = (obj) => {
 
   characters.forEach(element => totalFailures += element.failures)
   if (totalFailures === 0) {
-    return ("100% accurate")
+    return ("100")
   }
   return (charactersLength / (totalFailures + charactersLength) * 100).toFixed(2)
 }
