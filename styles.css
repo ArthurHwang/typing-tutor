@@ -1,7 +1,7 @@
 * {
   background-color: black;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -10,7 +10,14 @@ body {
 }
 
 h1 {
-  font-size: 50px;
+  text-transform: uppercase;
+  font-size: 45px;
+  background-color: #ff3f00;
+  width: 75%;
+  margin: auto;
+  border-radius: 10px;
+  color: black;
+  border: 2px solid #ffe500;
 }
 
 p {
@@ -18,11 +25,17 @@ p {
 }
 
 span {
-  font-size: 30px;
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0);
+  width: 7.3em;
+  -webkit-animation: type 2s steps(40, end);
+  animation: type 2s steps(40, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 .current-character {
-  color: #007fff;
+  color: #f7ef04;
   font-size: 80px;
 }
 
@@ -33,9 +46,37 @@ span {
 
 .succeed {
   font-size: 30px;
-  color: #00ff0c
+  color: #1dff00
 }
 
 .game-over {
-  color: magenta;
+  color: #00ff2e;
+}
+
+.container {
+  background-color: #0c00ff;
+  width: 75%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.space-fail {
+  background-color: red;
+}
+
+.current-char-blinking {
+  font-weight: 100;
+  font-size: 80px;
+  color: #f7ef04;
+  animation: 1s blink step-end infinite;
+}
+
+@-webkit-keyframes "blink" {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #f7ef04;
+  }
 }

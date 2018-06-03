@@ -24,8 +24,8 @@ const createSpan = element => {
   if (stateIndex - 1 === spanIndex) {
     classList.toggle('succeed');
   }
-  if (stateIndex === spanIndex) {
-    classList.toggle('current-character');
+  if (stateIndex === spanIndex) {    
+    classList.toggle('current-char-blinking')
   }
   if (element.failures > 0 && stateIndex === spanIndex) {
     classList.toggle('failed');
@@ -34,8 +34,9 @@ const createSpan = element => {
 }
 
 const renderAll = array => {
+  const renderTarget = document.querySelector('.container')
   array.forEach(element => {
-    document.body.appendChild(createSpan(element))
+    renderTarget.appendChild(createSpan(element))
   })
 }
 
@@ -51,14 +52,14 @@ const calcAccuracy = (obj) => {
 
   characters.forEach(element => totalFailures += element.failures)
   if (totalFailures === 0) {
-    return ("100% accurate")
+    return ("100")
   }
-  return (charactersLength / (totalFailures + charactersLength) * 100).toFixed(2) + "% accurate"
+  return (charactersLength / (totalFailures + charactersLength) * 100).toFixed(2)
 }
 
 const gameOver = (obj) => {
   let endScore = document.createElement('h1')
-  endScore.textContent = "Game Over!" + calcAccuracy(obj)
+  endScore.textContent = calcAccuracy(obj) + "% accurate"
   endScore.className = "game-over"
   document.body.appendChild(endScore)
 }
