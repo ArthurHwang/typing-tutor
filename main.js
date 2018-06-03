@@ -60,6 +60,8 @@ const calcAccuracy = (obj) => {
   return (charactersLength / (totalFailures + charactersLength) * 100).toFixed(2)
 }
 
+// const 
+
 const gameOver = (obj) => {
   let endScore = document.createElement('h1')
   endScore.textContent = calcAccuracy(obj) + "% accurate"
