@@ -16,12 +16,9 @@ const phrases = [
   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, totam!',
   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, reiciendis.',
   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, impedit!',  
+  'Lorem ipsum dolor sit amet.',
+  'Lorem ipsum dolor sit amet.',
+  'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+  'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos!'
 ]
 
-const splitSentences = phrases.map((char, index) => {
-  return {
-    sentence: char,
-    index: index,
-    failures: 0
-  }
-});
